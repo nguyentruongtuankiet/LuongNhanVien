@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="648" pageHeight="842" columnWidth="608" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb9c4c00-c4f6-42bc-add3-ac3aecb62890">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="thang" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nam" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT dbo.LuongCongNhan.*
+FROM     dbo.LuongCongNhan
+where ThangLuong = $P{thang} And NamLuong = $P{nam}]]>
+	</queryString>
+	<field name="MaLuong" class="java.lang.Integer"/>
+	<field name="MaCN" class="java.lang.String"/>
+	<field name="TenCN" class="java.lang.String"/>
+	<field name="SoSPLamDuoc" class="java.lang.Integer"/>
+	<field name="PhuCap" class="java.lang.Double"/>
+	<field name="ThangLuong" class="java.lang.Integer"/>
+	<field name="NamLuong" class="java.lang.Integer"/>
+	<field name="TongLuong" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="20" uuid="5184b0bd-edd3-47ac-91ea-9e31d8a76935"/>
+				<text><![CDATA[Công ty nước ngọt HEALTHY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="261" height="20" uuid="f1919b49-a9a5-426a-9aae-10fc473dd875"/>
+				<text><![CDATA[14, Nguyễn Văn Bảo, Phường 4, Q. Gò Vấp TPHCM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="193" y="40" width="285" height="44" uuid="cd001362-af64-418e-89e0-7d31aefedbb4"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bảng lương công nhân]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="386" y="9" width="36" height="20" uuid="114849a3-4a56-4f27-aae6-0daacbe8277a"/>
+				<text><![CDATA[Tháng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="9" width="36" height="20" uuid="c20ccac5-c32b-4e47-9384-3aa9c67194ad"/>
+				<text><![CDATA[Năm]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50"/>
+	</columnHeader>
+	<columnFooter>
+		<band height="108" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="104" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="95" splitType="Stretch"/>
+	</summary>
+</jasperReport>

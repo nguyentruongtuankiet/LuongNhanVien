@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f02a7e58-dd29-47e6-8d09-9acd12b796a4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="thang" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nam" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from LuongCongNhan where ThangLuong= $P{thang} AND NamLuong = $P{nam}]]>
+	</queryString>
+	<field name="MaLuong" class="java.lang.Integer"/>
+	<field name="MaCN" class="java.lang.String"/>
+	<field name="TenCN" class="java.lang.String"/>
+	<field name="SoSPLamDuoc" class="java.lang.Integer"/>
+	<field name="PhuCap" class="java.lang.Double"/>
+	<field name="ThangLuong" class="java.lang.Integer"/>
+	<field name="NamLuong" class="java.lang.Integer"/>
+	<field name="TongLuong" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="17" uuid="e7685690-dbf4-4455-bce1-06ee3a1d411c"/>
+				<text><![CDATA[Công ty nước ngọt HEALTHY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="255" height="20" uuid="f9843afb-a327-4f4d-a46d-9230b7f0c120"/>
+				<text><![CDATA[14, Nguyễn Văn Bảo, Phường 4, Q. Gò Vấp, TPHCM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="54" width="272" height="41" uuid="a51a171c-23ff-451f-99dc-5340a35c515e"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Bảng lương công nhân]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="332" y="15" width="36" height="20" uuid="3e683fde-49c5-4d44-8e82-b03957b3b28e"/>
+				<text><![CDATA[Tháng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="15" width="33" height="20" uuid="864e3ac2-31d8-4de8-9655-7c706affd5d1"/>
+				<text><![CDATA[Năm]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="471" y="15" width="32" height="20" uuid="50c2876d-69dd-4363-a87c-65956767f3b5"/>
+				<textFieldExpression><![CDATA[$F{NamLuong}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="15" width="25" height="20" uuid="64bc687e-41a5-476c-91de-16c4a29eef16"/>
+				<textFieldExpression><![CDATA[$F{ThangLuong}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="14" width="38" height="20" uuid="d2d8033a-f550-4ae7-8dfc-1f177afa4edb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã CN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="141" y="14" width="48" height="20" uuid="b9d969db-f8fe-42ad-bde2-031063986d7e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tên CN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="14" width="102" height="20" uuid="be8ea192-7217-4acf-b30c-f8a120681bf3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Số SP làm được]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="14" width="46" height="20" uuid="fb4ee92c-e779-4f85-b0e7-dd7ac180df21"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lương]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="42" width="555" height="1" uuid="13981e31-b3a9-4fee-881a-f1118aa690c0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="65" height="20" uuid="f93a9938-1140-44e6-a74c-f2891898f8a0"/>
+				<textFieldExpression><![CDATA[$F{MaCN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="107" y="0" width="158" height="20" uuid="5edc9427-8ff1-444d-bb2b-c86aa97bb900"/>
+				<textFieldExpression><![CDATA[$F{TenCN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="332" y="0" width="36" height="20" uuid="f1ad96c5-5a1d-4a60-bedc-50ed2239d7c1"/>
+				<textFieldExpression><![CDATA[$F{SoSPLamDuoc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###,000">
+				<reportElement x="457" y="0" width="83" height="20" uuid="204a84c6-df90-4c4e-b3bd-8f15c63f9325"/>
+				<textFieldExpression><![CDATA[$F{TongLuong}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" uuid="59baf6df-17e4-46c3-832a-9e4cf8fbc908"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
