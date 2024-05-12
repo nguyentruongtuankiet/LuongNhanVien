@@ -4,7 +4,5 @@
 ## Back end
 ---
 - **Yêu cầu:** Dựng ứng dụng Tính Lương Cho Nhân Viên
-- Ánh xạ `entity`, `repository` extend `JpaRepository`
-- Sử dụng 'Java Swing', 'Sql jdbc'.
-- **Diagram**
-- 
+- Sử dụng `Java Swing`, `Sql jdbc`.
+
